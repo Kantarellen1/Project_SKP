@@ -1,7 +1,7 @@
 #include <Arduino_MKRIoTCarrier.h>
 MKRIoTCarrier carrier;
 
-uint32_t myCustomColor = carrier.leds.Color(255,100,50);
+uint32_t myCustomColor = carrier.leds.Color(25,100,50);
 
 void setup() {
    carrier.noCase();
