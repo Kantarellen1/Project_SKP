@@ -1,20 +1,12 @@
-#include <Arduino_MKRIoTCarrier.h>
-MKRIoTCarrier carrier;
-
-uint32_t myCustomColor = carrier.leds.Color(25,100,50);
-
 void setup() {
-   carrier.noCase();
-   carrier.begin();
-   carrier.leds.fill(myCustomColor, 0, 5);
-   carrier.leds.show();
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
+// the loop function runs over and over again forever
 void loop() {
-    carrier.leds.fill(myCustomColor, 0, 5);
-    carrier.leds.show();
-    delay(1000);
-    carrier.leds.clear();
-    carrier.leds.show();
-    delay(1000);
+  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+  delay(1000);                      // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+  delay(1000);                      // wait for a second
 }
