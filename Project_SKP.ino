@@ -98,7 +98,7 @@ Servo myServo;  // create a servo object
 int const potPin = A0; // analog pin used to connect the potentiometer
 int potVal;  // variable to read the value from the analog pin 
 int angle;   // variable to hold the angle for the servo motor 
- 
+
 void setup() {
   myServo.attach(9); // attaches the servo on pin 9 to the servo object 
   Serial.begin(9600); // open a serial connection to your computer
@@ -123,3 +123,62 @@ void loop() {
   // wait for the servo to get there 
   delay(15);
 }*/
+/* Project Piezo
+int sensorValue;
+int sensorLow = 1023;
+int sensorHigh = 0;
+
+const int ledPin = 13;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, HIGH);
+
+  while (millis() < 5000) {
+    sensorValue = analogRead(A0);
+    if (sensorValue > sensorHigh) {
+      sensorHigh = sensorValue;
+    }
+    if (sensorValue < sensorLow) {
+      sensorLow = sensorValue;
+    }
+  }
+  digitalWrite(ledPin, LOW);
+}
+
+void loop() {
+  sensorValue = analogRead(A0);
+
+  int pitch = map(sensorValue, sensorLow, sensorHigh, 50, 4000);
+
+  tone(8, pitch, 20);
+
+  delay(10);
+}
+*/
+
+int notes[6] = {262, 294, 330, 349};
+
+void setup(){
+  Serial.begin(9600);
+}
+
+void loop(){
+int keyval = analogRead(A0);
+Serial.println(keyval);
+if(keyval == 1023){
+  tone(8, notes[0]);
+}
+else if(keyval >= 836 && keyval <= 1010){
+  tone(8, notes[1]);
+}
+else if(keyval >= 90 && keyval <= 515){
+  tone(8, notes[2]);
+}
+else if(keyval >= 5 && keyval <= 10){
+  tone(8, notes[3]);
+}
+else{
+  noTone(8);
+} 
+}
