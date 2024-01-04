@@ -169,10 +169,10 @@ Serial.println(keyval);
 if(keyval == 1023){
   tone(8, notes[0]);
 }
-else if(keyval >= 836 && keyval <= 1010){
+else if(keyval >= 980 && keyval <= 1010){
   tone(8, notes[1]);
 }
-else if(keyval >= 90 && keyval <= 515){
+else if(keyval >= 90 && keyval <= 979){
   tone(8, notes[2]);
 }
 else if(keyval >= 5 && keyval <= 10){
