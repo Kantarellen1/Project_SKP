@@ -1,7 +1,7 @@
 #include <Servo.h>
 
 #include <Servo.h>
-/*Project 2 
+/*Project LED
 int switchstate = 0;
 
 void setup() {
@@ -33,7 +33,8 @@ void loop() {
     delay(250);
   }
 }*/
-/*
+
+/* Project RGB LED
 const int greenLEDPin = 9;
 const int redLEDPin = 10;
 const int blueLEDPin = 11;
@@ -89,6 +90,7 @@ void loop() {
   analogWrite(blueLEDPin, blueValue);
 }*/
 
+/* Project Servo
 #include <Servo.h>
  
 Servo myServo;  // create a servo object 
@@ -120,4 +122,4 @@ void loop() {
  
   // wait for the servo to get there 
   delay(15);
-}
+}*/
